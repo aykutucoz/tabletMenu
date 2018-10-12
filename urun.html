@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<meta charset="utf8"/>
+		<!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;"> -->
+		<meta name="format-detection" content="telephone=no">
+		<meta name="msapplication-tap-highlight" content="no">
+		<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+		<link rel="icon" href="img/logoBigOven.png">
+		<link rel="stylesheet" type="text/css" href="css/urun.css">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/fontawesome.min.css">
+		<title>Big Oven Kahve Fırın Evi</title>
+    </head>
+    <body>
+	<style>
+	.paper{
+	height:100%;
+	width:100%;
+			background-image: url('img/paper.png');
+			background-size: cover;
+	position:absolute;
+	top:0px;
+	
+	left:0px;
+	opacity:.1;
+	
+	}
+	#urun {
+			height: 100%;
+			background-image: url('img/pizza.jpg');
+			background-size: cover;
+		}
+		
+	#menu{
+		height:100%;
+	}
+	</style>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-2">
+				<h4 class="baslik"><a href="index.html" style="color:#fff; text-decoration:none; ">Menü</a></h4>
+			</div>
+			
+			<div class="col-sm-12" id="menu" style="padding:0px">
+				<div class="panel-group" id="urunPanel">
+					
+				</div>				
+			</div>
+		</div>
+	</div> 
+	<script type="text/javascript" src="js/index.js"></script>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script src="js/background.js"></script>
+		<script>
+				$(function(){
+					/* localStorage.clear(); */
+					urunGoster();
+					menuGoster();
+
+					$('[id^="urunSecim"]').click(function () {
+						var value = $(this).data("id");
+						sessionStorage.setItem("seciliUrun", JSON.stringify(value));
+						window.location.href = "urunum.html";
+					});
+				}) ;
+	</script>		
+    </body>
+</html>
